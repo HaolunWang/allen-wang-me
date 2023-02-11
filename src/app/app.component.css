@@ -224,7 +224,11 @@ label
   --border-width: 4px;
   appearance: none;
   position: relative;
-  padding: 1em 2em;
+  /* padding: 1em 2em; */
+  padding: 1em 1em;
+  /* margin-right: 15px; */
+  /* margin-left: auto; */
+  margin-right: 100px;
   border: 0;
   background-color: #212121;
   /* background-color: #1976d2; */
@@ -295,9 +299,11 @@ label
 .dropdown-content {
   display: none;
   position: absolute;
-  right: 0;
+  /* right: 0; */
+  right: auto;
   background-color: #f9f9f9;
-  min-width: 160px;
+  /* min-width: 160px; */
+  min-width: 120px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
@@ -423,7 +429,7 @@ label
     margin-top: 16px;
   }
 
-  .card {
+  /* .card {
     all: unset;
     border-radius: 4px;
     border: 1px solid #eee;
@@ -438,7 +444,8 @@ label
     align-items: center;
     transition: all 0.2s ease-in-out;
     line-height: 24px;
-  }
+  } 
+  moved to styles.css */
 
   .card-container .card:not(:last-child) {
     margin-right: 0;
@@ -462,7 +469,7 @@ label
     fill: rgb(105, 103, 103);
   }
 
-  .card.highlight-card {
+  /* .card.highlight-card {
     background-color: #1976d2;
     color: white;
     font-weight: 600;
@@ -471,6 +478,7 @@ label
     min-width: 30%;
     position: relative;
   }
+  moved to styles.css */
 
   .card.card.highlight-card span {
     margin-left: 60px;
@@ -540,8 +548,8 @@ label
     width: 40px;
     border-radius: 40px;
     margin: 8px;
-    background-color: white;
-    border: 1px solid #eeeeee;
+    background-color: #252222;
+    border: 1px solid #252222;
     display: flex;
     justify-content: center;
     align-items: center;

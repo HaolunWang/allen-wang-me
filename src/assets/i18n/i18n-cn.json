@@ -1,0 +1,14 @@
+{
+    "welcome": "欢迎！",
+    "languages": "语言",
+    "mySite" : "这是我的个人网站",
+    "instruction" : "我叫王艾伦",
+    "description" : "这些链接是用来了解我的：",
+    "cardName1" : "我的母校",
+    "cardName2" : "我的项目",
+    "cardName3" : "我的经历",
+    "techStack" : "技术栈",
+    "techStackDescription" : "我平时工作中用这些技术：",
+    "footerDescription1" : "喜欢这个网站吗？",
+    "footerDescription2" : "请给我一颗星星吧。"
+}

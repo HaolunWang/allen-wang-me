@@ -1,0 +1,14 @@
+{
+    "welcome": "Welcome",
+    "languages": "Languages",
+    "mySite" : "My personal site is here!",
+    "instruction" : "My name is Allen Wang",
+    "description" : "Here are some links to know me:",
+    "cardName1" : "My University",
+    "cardName2" : "My Projects",
+    "cardName3" : "My Experience",
+    "techStack" : "Tech Stack",
+    "techStackDescription" : "These technologies are what I use in industries:",
+    "footerDescription1" : "Love this site?",
+    "footerDescription2" : "Please give my repo a star."
+}

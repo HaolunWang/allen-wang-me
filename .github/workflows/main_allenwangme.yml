@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: windows-latest
 
     steps:
@@ -30,6 +30,7 @@ jobs:
 
       - name: 'Deploy to Azure WebApp'
         uses: azure/webapps-deploy@v2
+        id: deploy-to-webapp
         with: 
           app-name: 'allenwangme'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_CD8CDFF0719E4557A96088AEE79DF45A }}

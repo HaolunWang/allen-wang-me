@@ -27,11 +27,15 @@ jobs:
           npm run build --if-present
           npm run test --if-present
       
-      # - name: Upload artifact for deployment job
-      #   uses: actions/upload-artifact@v2
-      #   with:
-      #     name: node-app
-      #     path: ../../dist/allen-wang-me
+      # Zip artifacts to speed things up
+      - name: Zip artifact for deployment
+        run: zip allen-wang-me.zip ./* -qr
+      
+      - name: Upload artifact for deployment job
+        uses: actions/upload-artifact@v2
+        with:
+          name: node-app
+          path: allen-wang-me.zip
 
   deploy:
     runs-on: ubuntu-latest
@@ -53,4 +57,4 @@ jobs:
           app-name: 'allenwangme'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_CD8CDFF0719E4557A96088AEE79DF45A }}
-          package: .
+          package: allen-wang-me.zip

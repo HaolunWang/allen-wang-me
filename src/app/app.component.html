@@ -34,13 +34,13 @@
     </div> -->
     <div class="dropdown" style="float:right;">
       <!-- <button class="dropbtn">{{ languages | translate }}</button> -->
-      <button class="dropbtn" (click)="showDropdownList()" (blur)="hideDropdownList('')">Languages</button>
+      <button class="dropbtn" (click)="showDropdownList()">Languages</button>
       <!-- The blur event is triggered when an element loses its focus. In this case, blur triggered when click outside the current button. -->
       <div id="dropdownlist" class="dropdown-content">
         <!-- *ngIf="showDropdown" will impact the setLang call API func func below, as will close/disappear this div so that cannot call API-->
       <!-- (click)="showOrHideDropdownList()" and *ngIf="showDropdown" is new added -->
-      <a (click)="hideDropdownList('i18n-en.json')">English</a>
-      <a (click)="hideDropdownList('i18n-cn.json')">中文</a>
+      <a (click)="hideDropdownListAndSetLang('i18n-en.json')">English</a>
+      <a (click)="hideDropdownListAndSetLang('i18n-cn.json')">中文</a>
       </div>
     </div>
 

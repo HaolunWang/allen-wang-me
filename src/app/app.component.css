@@ -291,6 +291,7 @@ label
  }
 /* drop down button above */
 
+/* drop down list below */
 .dropdown {
   position: relative;
   display: inline-block;
@@ -299,7 +300,8 @@ label
 .dropdown-content {
   /* border-radius: 10px 100px / 120px; */
   border-radius: 15px;
-  display: none;
+  /* display: none; */
+  display: block;
   position: absolute;
   /* right: 0; */
   right: auto;
@@ -326,9 +328,14 @@ label
   background-color: grey;
 }
 
-.dropdown:hover .dropdown-content {
+/* .dropdown:hover means if cursor moveout from dropdown, dropdown disappears; dropdown appears if cursor movein to dropdown */
+/* .dropdown:hover .dropdown-content {
   display: block;
-}
+} */
+
+/* .dropdown .dropdown-content {
+  display: block;
+} */
 
 /* .dropdown:hover .dropbtn {
   background-color: #4CAF50;

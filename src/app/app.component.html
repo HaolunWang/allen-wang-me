@@ -33,12 +33,17 @@
       <button (click)="setLang('i18n-en.json')">English</button>
     </div> -->
     <div class="dropdown" style="float:right;">
-      <button class="dropbtn">{{ languages | translate }}</button>
-      <div class="dropdown-content">
-      <a (click)="setLang('i18n-en.json')">English</a>
-      <a (click)="setLang('i18n-cn.json')">中文</a>
+      <!-- <button class="dropbtn">{{ languages | translate }}</button> -->
+      <button class="dropbtn" (click)="showDropdownList()" (blur)="hideDropdownList('')">Languages</button>
+      <!-- The blur event is triggered when an element loses its focus. In this case, blur triggered when click outside the current button. -->
+      <div id="dropdownlist" class="dropdown-content">
+        <!-- *ngIf="showDropdown" will impact the setLang call API func func below, as will close/disappear this div so that cannot call API-->
+      <!-- (click)="showOrHideDropdownList()" and *ngIf="showDropdown" is new added -->
+      <a (click)="hideDropdownList('i18n-en.json')">English</a>
+      <a (click)="hideDropdownList('i18n-cn.json')">中文</a>
       </div>
     </div>
+
     <input class="dark-light" (click)="toggleDarkTheme()" type="checkbox" id="dark-light" name="dark-light"/>
       <label for="dark-light"></label>
 
@@ -99,10 +104,10 @@
 
     <span>{{ mySite | translate}}</span>
 
-    <svg id="rocket-smoke" xmlns="http://www.w3.org/2000/svg" width="516.119" height="1083.632" viewBox="0 0 516.119 1083.632">
+    <!-- <svg id="rocket-smoke" xmlns="http://www.w3.org/2000/svg" width="516.119" height="1083.632" viewBox="0 0 516.119 1083.632">
       <title>Rocket Ship Smoke</title>
       <path id="Path_40" data-name="Path 40" d="M644.6,141S143.02,215.537,147.049,870.207s342.774,201.755,342.774,201.755S404.659,847.213,388.815,762.2c-27.116-145.51-11.551-384.124,271.9-609.1C671.15,139.365,644.6,141,644.6,141Z" transform="translate(-147.025 -140.939)" fill="#f5f5f5"/>
-    </svg>
+    </svg> -->
 
   </div>
 

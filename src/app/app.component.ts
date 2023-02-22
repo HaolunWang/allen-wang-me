@@ -1,6 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, enableProdMode, OnInit } from '@angular/core';
 import { TranslateService } from './i18n/translate.service';
+import { environment } from './../environments/environment';
 
+if (environment.production) {
+  enableProdMode(); // to resolve "ngular is running in development mode. Call enableProdMode() to enable production mode."
+  if(window){
+    window.console.log = window.console.warn = window.console.info = function(){ 
+      // Don't log anything.
+      // Don't log to console in production environment.
+    };
+  }
+  // window.console.log = function () { }; // this overwrites all console logs with blank function.
+}
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,6 +21,7 @@ export class AppComponent implements OnInit {
 
   constructor(private translateService: TranslateService) {
     console.log(translateService.data);
+    console.log("environment.production: ", environment.production); // show configuration in environment.ts
   }
 
   setLang(lang: string) {

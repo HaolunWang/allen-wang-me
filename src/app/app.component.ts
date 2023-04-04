@@ -1,5 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { TranslateService } from './i18n/translate.service';
+import { Configuration, OpenAIApi } from "openai";
+// equivalent to given example with node.js - const { Configuration, OpenAIApi } = require("openai");
 
 @Component({
   selector: 'app-root',
@@ -38,6 +40,46 @@ export class AppComponent implements OnInit {
 
   footerDescription1 = 'footerDescription1';
   footerDescription2 = 'footerDescription2';
+
+  async callAIApi() {
+    const configuration = new Configuration({
+      apiKey: process.env['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'], // API Secret Key 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
+    });
+    const openai = new OpenAIApi(configuration);
+
+    const response = await openai.createCompletion({
+      model: "text-davinci-003",
+      prompt: "The following is a conversation with an AI assistant. The assistant is helpful, creative, clever, and very friendly.\n\nHuman: Hello, who are you?\nAI: I am an AI created by OpenAI. How can I help you today?\nHuman: I'd like to cancel my subscription.\nAI:",
+      temperature: 0.9,
+      max_tokens: 150,
+      top_p: 1,
+      frequency_penalty: 0.0,
+      presence_penalty: 0.6,
+      stop: [" Human:", " AI:"],
+    });
+
+    console.log("Open AI response: " + response);
+  }
+
+  // async callAIApi() {
+  //   const configuration = new Configuration({
+  //     apiKey: process.env['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'], // API Secret Key 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
+  //   });
+  //   const openai = new OpenAIApi(configuration);
+
+  //   const response = await openai.createCompletion({
+  //     model: "text-davinci-003",
+  //     prompt: "The following is a conversation with an AI assistant. The assistant is helpful, creative, clever, and very friendly.\n\nHuman: Hello, who are you?\nAI: I am an AI created by OpenAI. How can I help you today?\nHuman: I'd like to cancel my subscription.\nAI:",
+  //     temperature: 0.9,
+  //     max_tokens: 150,
+  //     top_p: 1,
+  //     frequency_penalty: 0.0,
+  //     presence_penalty: 0.6,
+  //     stop: [" Human:", " AI:"],
+  //   });
+
+  //   console.log("Open AI response: " + response);
+  // }
 
   // showDropdown:boolean = false;
   // dropdownClass: any;

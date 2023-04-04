@@ -1,0 +1,14 @@
+{
+    "welcome": "Bienvenu",
+    "languages": "Langages",
+    "mySite" : "Mon site personnel est ici!",
+    "instruction" : "Je m'appelle Allen Wang",
+    "description" : "Voici quelques liens pour me connaître:",
+    "cardName1" : "Mon université",
+    "cardName2" : "Mes projets",
+    "cardName3" : "Mon expérience",
+    "techStack" : "Pile technologique",
+    "techStackDescription" : "Ces technologies sont celles que j'utilise dans les industries:",
+    "footerDescription1" : "Vous aimez ce site?",
+    "footerDescription2" : "S'il vous plaît donnez une étoile à mon dépôt."
+}

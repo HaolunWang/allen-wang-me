@@ -12,10 +12,10 @@ export class TranslateService {
 
   use(lang: string): Promise<{}> {
     return new Promise<{}>(resolve => {
-      // const langPath = `assets/i18n/${lang || 'i18n-en.json'}`; // applied on localhost or remote server
+      const localLangPath = `assets/i18n/${lang || 'i18n-en.json'}`; // applied on localhost or remote server
       const langPath = `https://raw.githubusercontent.com/HaolunWang/allen-wang-me/main/src/assets/i18n/${lang || 'i18n-en.json'}`;
-      console.log("langPath: " + langPath);
-      this.http.get(langPath).subscribe(
+      console.log("langPath: " + localLangPath); // temporary change
+      this.http.get(localLangPath).subscribe( // temporary change
         response => {
           this.data = response || {};
           resolve(this.data);

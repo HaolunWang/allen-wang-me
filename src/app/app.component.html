@@ -33,6 +33,7 @@
       <button (click)="setLang('i18n-en.json')">English</button>
     </div> -->
     <div class="dropdown" style="float:right;">
+      <!-- below are dev branch code -->
       <!-- <button class="dropbtn">{{ languages | translate }}</button> -->
       <button class="dropbtn" (click)="showDropdownList()">Languages</button>
       <!-- The blur event is triggered when an element loses its focus. In this case, blur triggered when click outside the current button. -->
@@ -41,7 +42,13 @@
       <!-- (click)="showOrHideDropdownList()" and *ngIf="showDropdown" is new added -->
       <a (click)="hideDropdownListAndSetLang('i18n-en.json')">English</a>
       <a (click)="hideDropdownListAndSetLang('i18n-cn.json')">中文</a>
-      </div>
+      <!-- below are main branch code -->
+      <!-- <button class="dropbtn">Languages</button>
+      <div class="dropdown-content">
+      <a (click)="setLang('i18n-en.json')">English</a>
+      <a (click)="setLang('i18n-fr.json')">Français</a>
+      <a (click)="setLang('i18n-cn.json')">中文</a>
+      </div> -->
     </div>
 
     <input class="dark-light" (click)="toggleDarkTheme()" type="checkbox" id="dark-light" name="dark-light"/>

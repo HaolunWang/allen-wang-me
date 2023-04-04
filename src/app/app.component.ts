@@ -43,7 +43,7 @@ export class AppComponent implements OnInit {
 
   async callAIApi() {
     const configuration = new Configuration({
-      apiKey: process.env['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'], // API Secret Key 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
+      apiKey: process.env['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'], // API Secret Key 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 - disabled, need to create new one
     });
     const openai = new OpenAIApi(configuration);
 
